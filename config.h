@@ -61,6 +61,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *webbrowser[] = { "firefox-bin", NULL};
 static const char *github[] = {"/home/cieran/scripts/github.sh", NULL};
 static const char *youtube[] = {"/home/cieran/scripts/youtube.sh", NULL};
+static const char *htop[] = {"/home/cieran/scripts/htop.sh", "NULL"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -69,6 +70,7 @@ static Key keys[] = {
 	{ MODKEY,             		XK_w, 	   spawn,          {.v = webbrowser } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = github } },
 	{ MODKEY,                       XK_y,      spawn,          {.v = youtube } },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htop } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
