@@ -8,11 +8,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=11" };
 static const char dmenufont[]       = "monospace:size=11";
-static const char col_gray1[]       = "#282c34";
-static const char col_gray2[]       = "#444444";
+static const char col_gray1[]       = "#3b4252";
+static const char col_gray2[]       = "#434c5e";
 static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_purple[]      = "#54487A";
+static const char col_gray4[]       = "#4c566a";
+static const char col_purple[]      = "#8fbcbb";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -58,6 +58,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_purple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *vbox[] = {"/home/cieran/scripts/vbox.sh", "NULL"};
 static const char *webbrowser[] = { "firefox-bin", NULL};
 static const char *github[] = {"/home/cieran/scripts/github.sh", NULL};
 static const char *youtube[] = {"/home/cieran/scripts/youtube.sh", NULL};
@@ -76,6 +77,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htop } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = incVol } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = decVol } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = vbox } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
